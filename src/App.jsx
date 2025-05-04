@@ -1,7 +1,21 @@
-import Chatbot from './Chatbot' // Make sure this path matches your file structure
+import { useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase'; // make sure this is correctly set up
+import Chatbot from './components/Chatbot';
+import Login from './components/Login';
 import './index.css';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <div style={{
       display: 'flex',
@@ -11,9 +25,9 @@ function App() {
       backgroundColor: '#0a192f',
       padding: '20px'
     }}>
-      <Chatbot />
+      {user ? <Chatbot user={user} /> : <Login />}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
