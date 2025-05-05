@@ -1,13 +1,13 @@
-// src/firebase.js
 import { initializeApp } from "firebase/app";
 import { 
   getAuth, 
   GoogleAuthProvider,
   signInWithPopup,
-  signOut 
+  signOut,
+  onAuthStateChanged
 } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
-// Your Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCRBJhBL_cNkvHLOhdDbQtJwVr1Ene9yuU",
   authDomain: "kairo-e37ab.firebaseapp.com",
@@ -20,19 +20,21 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize services
 const auth = getAuth(app);
+const db = getFirestore(app);
+
+// Setup Google Auth Provider
 const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: 'select_account' });
 
-// Configure Google provider
-googleProvider.setCustomParameters({
-  prompt: 'select_account'
-});
-
-// Export auth methods and providers
 export { 
   app, 
   auth,
+  db,
   googleProvider,
   signInWithPopup,
-  signOut
+  signOut,
+  onAuthStateChanged
 };
