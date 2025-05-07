@@ -1,13 +1,25 @@
+
+// firebase.js
+
 import { initializeApp } from "firebase/app";
 import { 
   getAuth, 
-  GoogleAuthProvider,
+  GoogleAuthProvider, 
   signInWithPopup,
-  signOut,
-  onAuthStateChanged
+  signOut, 
+  onAuthStateChanged 
 } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { 
+  getFirestore, 
+  collection, 
+  addDoc, 
+  query, 
+  orderBy, 
+  onSnapshot, 
+  serverTimestamp 
+} from "firebase/firestore";
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCRBJhBL_cNkvHLOhdDbQtJwVr1Ene9yuU",
   authDomain: "kairo-e37ab.firebaseapp.com",
@@ -20,21 +32,26 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize services
 const auth = getAuth(app);
 const db = getFirestore(app);
-
-// Setup Google Auth Provider
 const googleProvider = new GoogleAuthProvider();
-googleProvider.setCustomParameters({ prompt: 'select_account' });
 
-export { 
-  app, 
+// Configure Google provider - increase security and reduce issues
+googleProvider.setCustomParameters({
+  prompt: "select_account"
+});
+
+export {
   auth,
   db,
   googleProvider,
   signInWithPopup,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot,
+  serverTimestamp
 };
