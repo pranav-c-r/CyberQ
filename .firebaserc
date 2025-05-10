@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "kairo-e37ab",
+    "kairo": "kairo-e37ab"
+  },
+  "targets": {},
+  "etags": {}
+}
