@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "kairo-e37ab",
-    "kairo": "kairo-e37ab"
+    "cyberq": "cyberq-3bdab"
   },
   "targets": {},
   "etags": {}

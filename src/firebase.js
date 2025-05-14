@@ -21,13 +21,13 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCRBJhBL_cNkvHLOhdDbQtJwVr1Ene9yuU",
-  authDomain: "kairo-e37ab.firebaseapp.com",
-  projectId: "kairo-e37ab",
-  storageBucket: "kairo-e37ab.appspot.com",
-  messagingSenderId: "794882422185",
-  appId: "1:794882422185:web:bf1fefe9a18c13eb5b40b8",
-  measurementId: "G-X6NGRL7MBW"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "cyberq-3bdab.firebaseapp.com",
+  projectId: "cyberq-3bdab",
+  storageBucket: "cyberq-3bdab.firebasestorage.app",
+  messagingSenderId: "99896624712",
+  appId: "1:99896624712:web:4075027ff624ce0e497a7d",
+  measurementId: "G-9CBZBTCJ46"
 };
 
 // Initialize Firebase
@@ -55,3 +55,4 @@ export {
   onSnapshot,
   serverTimestamp
 };
+

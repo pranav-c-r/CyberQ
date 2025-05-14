@@ -22,7 +22,7 @@ const Login = () => {
       
       <LoginCard>
         <LogoContainer>
-          <LogoText>K A I R O</LogoText>
+          <LogoText>C y b e r Q</LogoText>
           <Subtitle>Your AI Companion</Subtitle>
         </LogoContainer>
         
